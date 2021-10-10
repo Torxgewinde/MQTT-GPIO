@@ -11,7 +11,7 @@ The alternative to polling pins is to use interrupts.
 
 Interrupts are good for very short signals and they prevent the CPU to query the level again and again, basically keeping the CPU busy. However, this can also be a downside if for instance, while switching the outputs, the inputs might briefly detect a level change, causing false or unwanted signals. Stronger pull-up or pull-down resistors than the RPIs internal ones, could be used to overcome such issues. Alternatively, just poll the inputs when the outputs are not changing state. The CPU consumption for "wastefully" polling four inputs every 100 ms is 1-3% on a RPi 1B, which is acceptable for many use cases.
 
-The variable `POLL_INTERVALL = 0.1` configures the main loop to pause 100 ms before it checks the states again. If this is too slow or too quick for your use case, simply adjust it. The value is specified in seconds, float values are working as well. Higher values reduce CPU consumption, but increase reaction time; smaller values increase the CPU load, but increase reaction time.
+The variable `POLL_INTERVALL = 0.1` configures the main loop to pause 100 ms before it checks the states again. If this is too slow or too quick for your use case, simply adjust it. The value is specified in seconds, float values are working as well. Higher values reduce CPU consumption, but increase reaction time; smaller values increase the CPU load and decrease reaction time.
 
 ## Debugging messages
 To see a verbose output of what the script is doing, set the variable `PRINT_MESSAGES = True`.
