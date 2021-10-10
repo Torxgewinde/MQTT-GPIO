@@ -33,7 +33,7 @@ This script considers encryption to be mandatory.
 ### GPIOs as output
 To configure the outputs fill the array `Outputs` with objects of class `OUTPUT`. For example you just have one GPIO-output named "Output_01" at pin 23, the array is configured: `Outputs = [OUTPUT("Output_01", 23)]`. If you have more outputs, simply add those to the array. Outputs are set from MQTT by publishing the value "ON" to the topic "living_room/Output_01/set". Note the appended "/set" in the full topic to set the value. Outputs are read from MQTT by subscribing to the topic "living_room/Output_01". The state is published when it changes.
 
-## GPIOs as inputs
+### GPIOs as inputs
 To configure the inputs fill the array `Inputs` with objects of class `INPUT`. For example you just have one GPIO-input named "Schalter_01" at pin 8, the array is configured: `Inputs = [INPUT("Schalter_01", 8)]`. If you have more inputs, simply add those to the array. Inputs are read from MQTT by subscribing to the topic "living_room/Schalter_01". The state is published when it changes.
 
 # Dependencies
